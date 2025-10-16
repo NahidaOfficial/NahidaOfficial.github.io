@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于第一届HDMC的一些说明</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        :root {
+            --primary: #4a6baf;
+            --secondary: #f8a055;
+            --dark: #2c3e50;
+            --light: #f5f7fa;
+            --success: #2ecc71;
+            --danger: #e74c3c;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background: url('https://cdn.luogu.com.cn/upload/image_hosting/9wd65ds9.png') center/cover no-repeat fixed;
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: linear-gradient(135deg, #3498db 0%, #f39c12 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        .video-section {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .video-container {
+            flex: 2;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(5px);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 1.2rem;
+        }
+
+        .video-container i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .planner-info {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(5px);
+        }
+
+        .planner-info h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+        }
+
+        .planner-list {
+            list-style-type: none;
+        }
+
+        .planner-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .planner-list li:last-child {
+            border-bottom: none;
+        }
+
+        .qa-section {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(5px);
+        }
+
+        .qa-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .qa-item {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .qa-question {
+            background: linear-gradient(135deg, var(--primary), #3a5998);
+            color: white;
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .qa-question:hover {
+            background: linear-gradient(135deg, #3a5998, var(--primary));
+        }
+
+        .qa-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .qa-answer {
+            background: white;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .qa-answer-content {
+            padding: 1.5rem;
+            color: #555;
+        }
+
+        .qa-item.active .qa-answer {
+            max-height: 500px;
+            padding: 0;
+        }
+
+        .qa-item.active .qa-question i {
+            transform: rotate(180deg);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .video-section {
+                flex-direction: column;
+            }
+            
+            .video-container, .planner-info, .qa-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>关于第一届HDMC的一些说明</h1>
+        <p class="subtitle">邯郸市音游比赛 - 展现你的音游才华</p>
+    </header>
+
+    <main>
+        <section class="video-section">
+            <div class="video-container">
+                <i class="fas fa-play-circle"></i>
+                比赛宣传视频播放区域
+            </div>
+            <div class="planner-info">
+                <h2>策划人员：</h2>
+                <ul class="planner-list">
+                    <li>总策划：梦华社社长</li>
+                    <li>赛事总监：梦华社副社长</li>
+                    <li>Phigros分区负责人：XXX</li>
+                    <li>Milthm分区负责人：XXX</li>
+                    <li>宣传与设计：XXX</li>
+                    <li>技术开发：XXX</li>
+                    <li>裁判团队：XXX, XXX, XXX</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="qa-section">
+            <h2>常见问题解答 (Q&A)</h2>
+            
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span>Q：HDMC是什么？</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="qa-answer">
+                    <div class="qa-answer-content">
+                        A：HDMC是"HanDan city Music Competition"的缩写，也就是"邯郸市音游比赛"，是由邯郸市第一中学的非官方社团「梦华社」主办的主要面向邯郸市区内高中生发起的音游竞赛，旨在为邯郸市的音游爱好者提供展示实力的机会。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span>Q：这个比赛有什么特色？</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="qa-answer">
+                    <div class="qa-answer-content">
+                        A：本场比赛完全由高中生举办，筹备，并且我们为本次比赛准备了一首原创曲，四张自制谱以及丰厚的奖品，并且八强到决赛我们将在线下租赁场地进行举办。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span>Q：我该如何报名&参加？</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="qa-answer">
+                    <div class="qa-answer-content">
+                        A：你需要通过添加「梦华社」副社长微信或者官方微信账号进行海选，海选通过后会第一时间通知。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span>Q：本次比赛的流程是？</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="qa-answer">
+                    <div class="qa-answer-content">
+                        A：本次比赛分为两个分区：Phigros分区和Milthm分区，海选过后选出Phi分区64强和Mil分区16强，随后采用淘汰赛制单轮淘汰，每分区决出冠亚季军并颁发奖品，当然，只要海选通过你就有奖品哒，具体的晋级方式请见下面说明。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span>Q：进行海选需要提交什么？</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="qa-answer">
+                    <div class="qa-answer-content">
+                        A：您需要提交您的参赛ID（可以不是微信用户名），参赛分区（可以同时两个分区参加），就读学校（如是非高中生也请注明是哪个初中的或者是大学生，社会人士等）以及参加海选的歌曲手元。Phi分区请提交课题模式的手元，Mil分区请提交困难模式下的三首歌曲的手元，Phi分区综合成绩和难度入选，Mil分区取三首歌曲的露滴之和进行排名（使用无露滴加成的角色）。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span>Q：具体的晋级方式？</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="qa-answer">
+                    <div class="qa-answer-content">
+                        A：Phi分区在八强之前进行线上比拼（参考Phigros大师赛），使用腾讯会议，四人一小组，每人选一首歌打课题模式比拼总分，每小组取前二晋级，决出16强后采用两人分组模式，16进8和8进4时两人一人选一首歌，主办方选一首歌打课题模式，决出四强之后转入Phira打自制谱，全程由主办方选歌，4进2时每组三首歌，两首主办方选，一首采用自制谱，不进行季军争夺赛，冠亚争夺赛采用两张自制谱和一首原创曲，考验初见能力，我们保证五张自制谱（包含原创曲）的平均难度不低于15.8（参考Phigros定数）。<br><br>
+                        对于Mil分区，由于歌曲较少且没有自制谱社区，我们将全程采用四人小组赛制，每人挑选一首歌打困难模式比拼露滴总和，也是取两个季军一冠一亚。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span>Q：具体的奖品安排？</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="qa-answer">
+                    <div class="qa-answer-content">
+                        A：<br>
+                        <strong>Phi分区：</strong><br>
+                        64强：Phigros小挂件两个+纪念品；<br>
+                        32强：Phigros吧唧两个+纪念品；<br>
+                        16强：Phigros桌垫/抱枕一个+纪念品；<br>
+                        进入八强的选手：自选蜜雪+纪念品；<br>
+                        冠亚季军：定制奖牌+纪念品；<br><br>
+                        <strong>Mil分区：</strong><br>
+                        16强：Milthm自选周边一份+纪念品；<br>
+                        进入八强的选手：自选蜜雪+纪念品；<br>
+                        冠亚季军：定制奖牌+纪念品；
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span>Q：「梦华社」副社长微信或者官方微信账号？</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="qa-answer">
+                    <div class="qa-answer-content">
+                        A：<br>
+                        副社长微信：Nahida_Forever1027<br>
+                        官方微信：2025HDMC
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>主办方：邯郸市第一中学梦华社</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const qaItems = document.querySelectorAll('.qa-item');
+            
+            qaItems.forEach(item => {
+                const question = item.querySelector('.qa-question');
+                
+                question.addEventListener('click', function() {
+                    // 关闭其他打开的Q&A
+                    qaItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // 切换当前Q&A的状态
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
