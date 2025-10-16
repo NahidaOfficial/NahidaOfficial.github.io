@@ -1,2 +1,2 @@
-# HDMCreg.github.io
-第一届HDMC说明页面
+# NahidaOfficial.github.io
+第一届HDMC说明页
