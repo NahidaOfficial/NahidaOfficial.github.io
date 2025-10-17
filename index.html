@@ -314,7 +314,7 @@
                 </div>
                 <div class="qa-answer">
                     <div class="qa-answer-content">
-                        A：Phi分区在八强之前进行线上比拼（参考Phigros大师赛），使用腾讯会议，四人一小组，每人选一首歌打课题模式比拼总分，每小组取前二晋级，决出16强后采用两人分组模式，16进8和8进4时两人一人选一首歌，主办方选一首歌打课题模式，决出四强之后转入Phira打自制谱，全程由主办方选歌，4进2时每组三首歌，两首主办方选，一首采用自制谱，不进行季军争夺赛，冠亚争夺赛采用两张自制谱和一首原创曲，考验初见能力，我们保证五张自制谱（包含原创曲）的平均难度不低于15.8（参考Phigros定数）。<br><br>
+                        A：Phi分区在八强之前进行线上比拼（参考Phigros大师赛），使用腾讯会议，四人一小组，每人选一首歌打课题模式比拼总分，每小组取前二晋级，决出8强后采用两人分组模式，8进4时两人一人选一首歌，主办方选一首歌打课题模式，决出四强之后转入Phira打自制谱，全程由主办方选歌，4进2时每组三首歌，两首主办方选，一首采用自制谱，不进行季军争夺赛，冠亚争夺赛采用两张自制谱和一首原创曲，考验初见能力，我们保证五张自制谱（包含原创曲）的平均难度不低于15.8（参考Phigros定数）。<br><br>
                         对于Mil分区，由于歌曲较少且没有自制谱社区，我们将全程采用四人小组赛制，每人挑选一首歌打困难模式比拼露滴总和，也是取两个季军一冠一亚。
                     </div>
                 </div>
@@ -365,20 +365,15 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const qaItems = document.querySelectorAll('.qa-item');
-            
+            const qaItems = document.querySelectorAll('.qa-item');   
             qaItems.forEach(item => {
                 const question = item.querySelector('.qa-question');
-                
                 question.addEventListener('click', function() {
-                    // 关闭其他打开的Q&A
                     qaItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains('active')) {
                             otherItem.classList.remove('active');
                         }
                     });
-                    
-                    // 切换当前Q&A的状态
                     item.classList.toggle('active');
                 });
             });
@@ -386,5 +381,6 @@
     </script>
 </body>
 </html>
+
 
 
